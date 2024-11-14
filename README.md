@@ -19,3 +19,5 @@ Plik .env powinien znajdować się w tym samym katalogu co skrypt main.py.
 ```
 py main.py "Zadanie dla JJunior AI Developera - tresc artykulu.txt"
 ```
+## Działanie
+Aplikacja zczytuje tekst z podanego pliku .txt, następnie wysyła go do API OpenAI, otrzymaną odpowiedz zapisuje jako `artykul.html`.
