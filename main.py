@@ -26,9 +26,12 @@ def main(txt_file, API_KEY=None):
 
     # check if there is an API key specified, exit if not
     if API_KEY is None:
-        if os.path.exists(env_file):
-            load_dotenv(env_file)
-            API_KEY = os.getenv('OPENAI_API_KEY')
+        API_KEY = os.environ.get('OPENAI_API_KEY')
+        if API_KEY is None:
+            if os.path.exists(env_file):
+                load_dotenv(env_file)
+                API_KEY = os.getenv('OPENAI_API_KEY')
+    
     if API_KEY is None:
         print("No api key has been specified. Exiting...")
         return
